@@ -37,9 +37,9 @@ PRODUCT_PROPERTY_OVERRIDES := \
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, device/samsung/manta/device.mk)
 
-PRODUCT_NAME := full_manta
+PRODUCT_NAME := liquid_manta
 PRODUCT_DEVICE := manta
-PRODUCT_BRAND := Android
-PRODUCT_MODEL := Full AOSP on Manta
+PRODUCT_BRAND := Google
+PRODUCT_MODEL := Nexus 10
 PRODUCT_MANUFACTURER := Samsung
-PRODUCT_RESTRICT_VENDOR_FILES := owner path
+PRODUCT_RESTRICT_VENDOR_FILES := false

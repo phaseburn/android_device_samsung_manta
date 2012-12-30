@@ -26,14 +26,14 @@ PRODUCT_COPY_FILES := \
     device/samsung/manta/init.manta.usb.rc:root/init.manta.usb.rc \
     device/samsung/manta/init.recovery.manta.rc:root/init.recovery.manta.rc \
     device/samsung/manta/fstab.manta:root/fstab.manta \
-    device/samsung/manta/ueventd.manta.rc:root/ueventd.manta.rc
+    device/samsung/manta/ueventd.manta.rc:root/ueventd.manta.rc \
+    device/samsung/manta/vold.fstab:system/etc/vold.fstab
 
 # Input device files for manta
 PRODUCT_COPY_FILES += \
     device/samsung/manta/Atmel_maXTouch_Touchscreen.idc:system/usr/idc/Atmel_maXTouch_Touchscreen.idc \
     device/samsung/manta/manta-keypad.kl:system/usr/keylayout/manta-keypad.kl \
     device/samsung/manta/manta-keypad.kcm:system/usr/keychars/manta-keypad.kcm
-
 
 # Init files for booting smdk5250 with a manta image
 PRODUCT_COPY_FILES += \
@@ -66,7 +66,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
     frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml
-
 
 PRODUCT_COPY_FILES += \
     device/samsung/manta/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
@@ -178,9 +177,6 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.hwui.text_large_cache_height=1024 \
     ro.hwui.disable_scissor_opt=true
 
-# setup dalvik vm configs.
-$(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
-
 # Enable AAC 5.1 output
 PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true
@@ -197,5 +193,4 @@ PRODUCT_PACKAGES += \
 $(call inherit-product-if-exists, hardware/samsung_slsi/exynos5/exynos5.mk)
 $(call inherit-product-if-exists, vendor/samsung_slsi/exynos5/exynos5-vendor.mk)
 $(call inherit-product-if-exists, vendor/samsung/manta/device-vendor.mk)
-
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4324/device-bcm.mk)
