@@ -1,5 +1,6 @@
 #
-# Copyright (C) 2011 The Android Open-Source Project
+# Copyright (C) 2012 The CyanogenMod Project
+# Copyright (C) 2012 The LiquidSmooth Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,14 +15,7 @@
 # limitations under the License.
 #
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/samsung/manta/kernel
-else
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
 PRODUCT_COPY_FILES := \
-    $(LOCAL_KERNEL):kernel \
     device/samsung/manta/init.manta.rc:root/init.manta.rc \
     device/samsung/manta/init.manta.usb.rc:root/init.manta.usb.rc \
     device/samsung/manta/init.recovery.manta.rc:root/init.recovery.manta.rc \
@@ -82,12 +76,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += libaudience_voicefx
 PRODUCT_COPY_FILES += \
     device/samsung/manta/audio_effects.conf:system/etc/audio_effects.conf
-
-# for bugmailer
-PRODUCT_PACKAGES := send_bug
-PRODUCT_COPY_FILES += \
-    system/extras/bugmailer/bugmailer.sh:system/bin/bugmailer.sh \
-    system/extras/bugmailer/send_bug:system/bin/send_bug
 
 # BCM47511 GPS
 PRODUCT_COPY_FILES += \
@@ -181,6 +169,10 @@ PRODUCT_PROPERTY_OVERRIDES := \
 PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true
 
+# Required For Boot DO NOT DELETE!
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dexopt-data-only=1
+
 # set default USB configuration
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
@@ -196,10 +188,9 @@ $(call inherit-product-if-exists, vendor/samsung/manta/device-vendor.mk)
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4324/device-bcm.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	dalvik.vm.heapsize=512m \
-	dalvik.vm.heapmaxfree=8m \
+    dalvik.vm.heapsize=512m \
+    dalvik.vm.heapmaxfree=8m \
     dalvik.vm.heapminfree=512k \
     dalvik.vm.heapstartsize=32m \
     dalvik.vm.heapgrowthlimit=256m \
     dalvik.vm.heaputilization=0.75
-

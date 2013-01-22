@@ -1,5 +1,6 @@
 #
-# Copyright (C) 2011 The Android Open-Source Project
+# Copyright (C) 2012 The CyanogenMod Project
+# Copyright (C) 2012 The LiquidSmooth Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,15 +15,10 @@
 # limitations under the License.
 #
 
-# These two variables are set first, so they can be overridden
-# by BoardConfigVendor.mk
 BOARD_USES_GENERIC_AUDIO := true
-
-# Default values, possibly overridden by BoardConfigVendor.mk
 TARGET_BOARD_INFO_FILE := device/samsung/manta/board-info.txt
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/manta/bluetooth
 
-# Use the non-open-source parts, if they're present
 -include vendor/samsung/manta/BoardConfigVendor.mk
 
 TARGET_CPU_ABI := armeabi-v7a
@@ -32,26 +28,22 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
-# Define kernel config for inline building
-TARGET_KERNEL_CONFIG := cyanogenmod_manta_defconfig
+# Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/manta
+TARGET_KERNEL_CONFIG := cyanogenmod_manta_defconfig
 
-#Bluetooth
+# Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
 TARGET_NO_BOOTLOADER := true
-
 TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_PLATFORM := exynos5
 TARGET_BOOTLOADER_BOARD_NAME := manta
 
 BOARD_EGL_CFG := device/samsung/manta/egl.cfg
-
 OVERRIDE_RS_DRIVER := libRSDriverArm.so
 
-#BOARD_USES_HGL := true
-#BOARD_USES_OVERLAY := true
 USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
@@ -61,9 +53,6 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 14273216512
 BOARD_CACHEIMAGE_PARTITION_SIZE := 553648128
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 4096
-
-#TARGET_PROVIDES_INIT_RC := true
-#TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
@@ -78,12 +67,6 @@ WIFI_DRIVER_FW_PATH_P2P     := "/vendor/firmware/fw_bcmdhd_p2p.bin"
 WIFI_DRIVER_FW_PATH_AP      := "/vendor/firmware/fw_bcmdhd_apsta.bin"
 
 BOARD_LIB_DUMPSTATE := libdumpstate.manta
-
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
-
-TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
-TARGET_RECOVERY_UI_LIB := librecovery_ui_manta
-TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_manta
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/manta
-
 BOARD_HAS_NO_SELECT_BUTTON := true
