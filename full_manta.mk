@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2012 The CyanogenMod Project
-# Copyright (C) 2012 The LiquidSmooth Project
+# Copyright (C) 2012 The Carbon Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, device/samsung/manta/device.mk)
 
-PRODUCT_NAME := liquid_manta
+PRODUCT_NAME := carbon_manta
 PRODUCT_DEVICE := manta
 PRODUCT_BRAND := Google
 PRODUCT_MODEL := Nexus 10
