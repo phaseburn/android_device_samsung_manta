@@ -33,7 +33,7 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/manta
-TARGET_KERNEL_CONFIG := manta_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_manta_defconfig
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
