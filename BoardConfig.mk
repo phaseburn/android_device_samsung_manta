@@ -34,6 +34,7 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/manta
 TARGET_KERNEL_CONFIG := cyanogenmod_manta_defconfig
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6/bin/arm-eabi-
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
