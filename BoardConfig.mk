@@ -79,3 +79,7 @@ BOARD_LIB_DUMPSTATE := libdumpstate.manta
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/manta
 BOARD_HAS_NO_SELECT_BUTTON := true
+
+# Support WebGL in WebKit
+ENABLE_WEBGL := true
+
