@@ -18,6 +18,9 @@
 # name
 PRODUCT_RELEASE_NAME := Nexus10
 
+# OVERLAY_TARGET adds overlay asset source
+OVERLAY_TARGET := pa_manta
+
 # device
 $(call inherit-product, device/samsung/manta/full_manta.mk)
 
