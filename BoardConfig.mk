@@ -38,7 +38,6 @@ COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
 # Define kernel config for inline building
 TARGET_KERNEL_CONFIG := cyanogenmod_manta_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/manta
-TARGET_KERNEL_CONFIG := cyanogenmod_manta_defconfig
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6/bin/arm-eabi-
 
 # Bluetooth
@@ -78,6 +77,8 @@ WIFI_DRIVER_FW_PATH_AP      := "/vendor/firmware/fw_bcmdhd_apsta.bin"
 BOARD_LIB_DUMPSTATE := libdumpstate.manta
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/manta
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
+
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 # Support WebGL in WebKit
