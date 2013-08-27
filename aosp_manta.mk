@@ -1,6 +1,5 @@
 #
-# Copyright (C) 2012 The CyanogenMod Project
-# Copyright (C) 2012 The Carbon Project
+# Copyright 2013 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,18 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+$(call inherit-product, device/samsung/manta/full_manta.mk)
 
-PRODUCT_PROPERTY_OVERRIDES := \
-        net.dns1=8.8.8.8 \
-        net.dns2=8.8.4.4
-
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
-$(call inherit-product, device/samsung/manta/device.mk)
-
-PRODUCT_NAME := carbon_manta
-PRODUCT_DEVICE := manta
-PRODUCT_BRAND := Google
-PRODUCT_MODEL := Nexus 10
-PRODUCT_MANUFACTURER := Samsung
-PRODUCT_RESTRICT_VENDOR_FILES := false
+PRODUCT_NAME := aosp_manta

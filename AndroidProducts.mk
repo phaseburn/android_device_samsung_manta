@@ -15,4 +15,4 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/carbon_manta.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/full_manta.mk $(LOCAL_DIR)/aosp_manta.mk
